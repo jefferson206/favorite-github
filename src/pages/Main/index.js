@@ -1,10 +1,12 @@
 import React from "react";
+import { Title } from "./styles";
 
 function Main() {
     return (
-      <div >
-        <h1>MAIN</h1>
-      </div>
+      <Title>
+        Main
+        <span>Hello world</span>
+      </Title>
     );
   }
   
