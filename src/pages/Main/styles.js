@@ -26,7 +26,6 @@ export const Form = styled.form`
 
     input{
         flex: 1;
-        border: 1px solid #DDD;
         padding: 10px 15px;
         border-radius: 4px;
         font-size: 17px;
@@ -45,7 +44,7 @@ const animate = keyframes`
 export const SubmitButton = styled.button.attrs({
     type: 'submit',
 })`
-    background: #0D2636;
+    background: var(--primary-color);
     border: 0;
     border-radius: 4px;
     margin-left: 10px;
@@ -65,5 +64,43 @@ export const SubmitButton = styled.button.attrs({
             }
         `
     }
+`;
 
+export const List = styled.ul`
+    list-style: none;
+    margin-top: 20px;
+
+    li {
+        padding: 15px 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        & + li {
+            border-top: 2px solid #eee;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+    }
+`;
+
+export const DeleteButton = styled.button.attrs({
+    type: 'button'
+})`
+    border: 0;
+    background: transparent;
+    color: #e72d2d;
+    padding: 8px 7px;
+    outline: 0;
+    border-radius: 4px;
+    vertical-align: middle;
+    
+    :hover {
+        color: var(--primary-color);
+        transition: color 0.3s ease;
+    }
 `;
