@@ -2,7 +2,9 @@
     "Main": {
         "Title": "My Repositories",
         "Search": {
-            "Placeholder": "Add Repository"
+            "Placeholder": "Add Repository",
+            "NoData": "You must provide a repository",
+            "Duplicated": "Repository already in your favorite"
         }
     }
 }
