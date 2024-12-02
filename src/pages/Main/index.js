@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { Container, Form, SubmitButton, List, DeleteButton } from "./styles";
 import { useTranslation } from "react-i18next";
 import api from "services/api";
+import { Link } from "react-router-dom";
 
 function Main() {
   const { t } = useTranslation();
@@ -112,9 +113,9 @@ function Main() {
                 </DeleteButton>
                 {repo.name}
               </span>
-              <a href="/">
+              <Link to={`/Repos/${encodeURIComponent(repo.name)}`}>
                 <FaBars size={20}/>
-              </a>
+              </Link>
             </li>
           )
         })}
