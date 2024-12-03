@@ -3,11 +3,13 @@ import { useParams } from "react-router-dom";
 import { BackButton, Container, Loading, Owner } from "./styles";
 import api from "services/api";
 import { FaArrowLeft } from "react-icons/fa";
-
+import './types';
 
 function Repos() {
   const { repo } = useParams();
+    /** @type {Repository | any} */
   const [repository, setRepository] = useState({});
+    /** @type {Issue[] | any[]} */
   const [issues, setIssues] = useState([]);
   const [loading, setLoading] = useState(true);
 
