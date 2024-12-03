@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { BackButton, Container, Loading, Owner } from "./styles";
+import { BackButton, Container, IssuesList, Loading, Owner } from "./styles";
 import api from "services/api";
 import { FaArrowLeft } from "react-icons/fa";
 import './types';
@@ -53,6 +53,25 @@ function Repos() {
         <h1>{repository?.name}</h1>
         <p>{repository?.description}</p>
       </Owner>
+
+      <IssuesList>
+        {issues.map(issue => (
+          <li key={String(issue.id)}>
+            <img src={issue.user.avatar_url} alt={issue.user.login}/>
+
+            <div>
+              <strong>
+                <a href={issue.html_url}>{issue.title}</a>
+                {issue.labels.map(label => (
+                  <span key={String(label.id)}>{label.name}</span>
+                ))}
+              </strong>
+              <p>{issue.user.login}</p>
+            </div>
+            
+          </li>
+        ))}
+      </IssuesList>
 
     </Container>
   );
