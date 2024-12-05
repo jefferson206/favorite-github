@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { BackButton, Container, IssuesList, Loading, Owner } from "./styles";
+import { BackButton, Container, IssuesList, Loading, Owner, PageActions } from "./styles";
 import api from "services/api";
 import { FaArrowLeft } from "react-icons/fa";
 import './types';
+import { useTranslation } from "react-i18next";
 
 function Repos() {
+  const { t } = useTranslation();
+
   const { repo } = useParams();
     /** @type {Repository | any} */
   const [repository, setRepository] = useState({});
     /** @type {Issue[] | any[]} */
   const [issues, setIssues] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     async function load() {
@@ -30,6 +34,25 @@ function Repos() {
     }
     load();
   }, [repo]);
+
+  useEffect(() => {
+    async function loadIssue() {
+      const response = await api.get(`/repos/${repo}/issues`, {
+        params: {
+          state: 'open', 
+          page, 
+          per_page: 5
+        }
+      });
+      setIssues(response.data);
+    }
+
+    loadIssue();
+  }, [page, repo]);
+
+  function handlePage(action) {
+    setPage(action === 'back' ? (page - 1) : (page + 1));
+  }
 
   if (loading) {
     return (
@@ -72,6 +95,16 @@ function Repos() {
           </li>
         ))}
       </IssuesList>
+
+      <PageActions>
+        <button 
+          type="button" 
+          onClick={() => handlePage('back') }
+          disabled={page < 2}
+        >{t('Buttons.Previous')}</button>
+        <button type="button" onClick={() => handlePage('next') }>{t('Buttons.Next')}</button>
+
+      </PageActions>
 
     </Container>
   );
