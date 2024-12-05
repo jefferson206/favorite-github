@@ -6,5 +6,9 @@
             "NoData": "You must provide a repository",
             "Duplicated": "Repository already in your favorite"
         }
+    },
+    "Buttons": {
+        "Previous": "Previous",
+        "Next": "Next"
     }
 }
