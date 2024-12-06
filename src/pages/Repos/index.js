@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { BackButton, Container, IssuesList, Loading, Owner, PageActions } from "./styles";
+import { BackButton, Container, FilterList, IssuesList, Loading, Owner, PageActions } from "./styles";
 import api from "services/api";
 import { FaArrowLeft } from "react-icons/fa";
 import './types';
@@ -16,6 +16,12 @@ function Repos() {
   const [issues, setIssues] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
+  const [filters] = useState([
+    {state: 'all', label: 'Filters.Labels.All', active: true },
+    {state: 'open', label: 'Filters.Labels.Open', active: false },
+    {state: 'closed', label: 'Filters.Labels.Closed', active: false },
+  ]);
+  const [filterIndex, setFilterIndex] = useState(0);
 
   useEffect(() => {
     async function load() {
@@ -23,7 +29,7 @@ function Repos() {
         api.get(`/repos/${repo}`),
         api.get(`/repos/${repo}/issues`, {
           params: {
-            state: 'open', 
+            state: filters.find(filter => filter.active).state, 
             per_page: 5
           }
         }),
@@ -33,13 +39,13 @@ function Repos() {
       setLoading(false);
     }
     load();
-  }, [repo]);
+  }, [repo, filters]);
 
   useEffect(() => {
     async function loadIssue() {
       const response = await api.get(`/repos/${repo}/issues`, {
         params: {
-          state: 'open', 
+          state: filters[filterIndex].state, 
           page, 
           per_page: 5
         }
@@ -48,10 +54,14 @@ function Repos() {
     }
 
     loadIssue();
-  }, [page, repo]);
+  }, [filters, filterIndex, page, repo]);
 
   function handlePage(action) {
     setPage(action === 'back' ? (page - 1) : (page + 1));
+  }
+
+  function handleChangeFilter(index) {
+    setFilterIndex(index);
   }
 
   if (loading) {
@@ -76,6 +86,18 @@ function Repos() {
         <h1>{repository?.name}</h1>
         <p>{repository?.description}</p>
       </Owner>
+
+      <FilterList active={filterIndex}>
+        {filters.map((filter, index) => (
+          <button 
+            type="button" 
+            key={filter.label} 
+            onClick={() => handleChangeFilter(index)}
+          >
+            {t(filter.label)}
+          </button>
+        ))}
+      </FilterList>
 
       <IssuesList>
         {issues.map(issue => (

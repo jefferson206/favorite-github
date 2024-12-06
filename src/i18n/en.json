@@ -10,5 +10,12 @@
     "Buttons": {
         "Previous": "Previous",
         "Next": "Next"
+    },
+    "Filters": {
+        "Labels": {
+            "All": "All",
+            "Open": "Open",
+            "Closed": "Closed"
+        }
     }
 }
