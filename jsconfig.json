@@ -1,8 +1,14 @@
 {
     "compilerOptions": {
-        "baseUrl": "./src",
-        "checkJs": true,
-        "jsx": "react",
-        "resolveJsonModule": true
-    }
+      "checkJs": true,
+      "jsx": "react",
+      "allowJs": true,
+      "baseUrl": "./src",
+      "resolveJsonModule": true,
+      "target": "es6",
+      "moduleResolution": "node"
+    },
+    "include": [
+      "./src/**/*.js"
+    ]
 }
