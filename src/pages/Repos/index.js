@@ -1,18 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { BackButton, Container, FilterList, IssuesList, Loading, Owner, PageActions } from "./styles";
+import { Container, Loading } from "./styles";
 import api from "services/api";
-import { FaArrowLeft } from "react-icons/fa";
 import './types';
-import { useTranslation } from "react-i18next";
+import { FiltersRepo, HeadersRepo, IssuesRepo, FootersRepo } from 'components/Repos';
 
 function Repos() {
-  const { t } = useTranslation();
-
   const { repo } = useParams();
-    /** @type {Repository | any} */
   const [repository, setRepository] = useState({});
-    /** @type {Issue[] | any[]} */
   const [issues, setIssues] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
@@ -74,59 +69,20 @@ function Repos() {
 
   return (
     <Container>
-      <BackButton to="/">
-        <FaArrowLeft color="#000" size={30}/>
-      </BackButton>
+      <HeadersRepo repository={repository}/>
 
-      <Owner>
-        <img 
-          src={repository?.owner?.avatar_url}
-          alt={repository?.owner?.login}
-        />
-        <h1>{repository?.name}</h1>
-        <p>{repository?.description}</p>
-      </Owner>
+      <FiltersRepo 
+        filters={filters}
+        onFilterChange={handleChangeFilter}
+        activeIndex={filterIndex}
+      />
 
-      <FilterList active={filterIndex}>
-        {filters.map((filter, index) => (
-          <button 
-            type="button" 
-            key={filter.label} 
-            onClick={() => handleChangeFilter(index)}
-          >
-            {t(filter.label)}
-          </button>
-        ))}
-      </FilterList>
+      <IssuesRepo issues={issues}/>
 
-      <IssuesList>
-        {issues.map(issue => (
-          <li key={String(issue.id)}>
-            <img src={issue.user.avatar_url} alt={issue.user.login}/>
-
-            <div>
-              <strong>
-                <a href={issue.html_url}>{issue.title}</a>
-                {issue.labels.map(label => (
-                  <span key={String(label.id)}>{label.name}</span>
-                ))}
-              </strong>
-              <p>{issue.user.login}</p>
-            </div>
-            
-          </li>
-        ))}
-      </IssuesList>
-
-      <PageActions>
-        <button 
-          type="button" 
-          onClick={() => handlePage('back') }
-          disabled={page < 2}
-        >{t('Buttons.Previous')}</button>
-        <button type="button" onClick={() => handlePage('next') }>{t('Buttons.Next')}</button>
-
-      </PageActions>
+      <FootersRepo 
+        page={page}
+        onHandlePage={handlePage}
+      />
 
     </Container>
   );
