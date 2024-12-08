@@ -17,5 +17,8 @@
             "Open": "Open",
             "Closed": "Closed"
         }
+    },
+    "Core": {
+        "Loading": "Loading"
     }
 }

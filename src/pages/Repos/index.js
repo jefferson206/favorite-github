@@ -1,9 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { Container, Loading } from "./styles";
+import { Container } from "./styles";
 import { useRepoData } from "hooks/Repos/useRepoData";
 import { useRepoDataFilters } from "hooks/Repos/useRepoDataFilters";
 import { FiltersRepo, HeadersRepo, IssuesRepo, FootersRepo } from 'components/Repos';
+import LoadingComponent from "components/Loading";
 
 function Repos() {
   const { repo } = useParams();
@@ -12,9 +13,7 @@ function Repos() {
 
   if (loading) {
     return (
-      <Loading>
-        <h1>Loading...</h1>
-      </Loading>
+      <LoadingComponent />
     );
   }
 
