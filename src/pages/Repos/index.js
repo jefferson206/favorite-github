@@ -1,20 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { Container, Loading } from "./styles";
 import { useRepoData } from "hooks/Repos/useRepoData";
 import { useRepoDataFilters } from "hooks/Repos/useRepoDataFilters";
-import './types';
 import { FiltersRepo, HeadersRepo, IssuesRepo, FootersRepo } from 'components/Repos';
 
 function Repos() {
   const { repo } = useParams();
-  const [ page, setPage ] = useState(1);
   const { filters, filterIndex, handleChangeFilter } = useRepoDataFilters();
-  const { repository, issues, loading } = useRepoData(repo, filters, page, filterIndex);
-
-  function handlePage(action) {
-    setPage(action === 'back' ? (page - 1) : (page + 1));
-  }
+  const { repository, issues, loading, page, handlePage } = useRepoData(repo, filters, filterIndex);
 
   if (loading) {
     return (

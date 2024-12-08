@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import api from "services/api";
 
-export function useRepoData(repo, filters, page, filterIndex) {
-  const [repository, setRepository] = useState({});
-  const [issues, setIssues] = useState([]);
-  const [loading, setLoading] = useState(true);
+export function useRepoData(repo, filters, filterIndex) {
+  const [ repository, setRepository ] = useState({});
+  const [ issues, setIssues ] = useState([]);
+  const [ loading, setLoading ] = useState(true);
+  const [ page, setPage ] = useState(1);
 
   useEffect(() => {
     async function load() {
@@ -45,5 +46,9 @@ export function useRepoData(repo, filters, page, filterIndex) {
     loadIssuesByFilter();
   }, [filters, filterIndex, page, repo]);
 
-  return { repository, issues, loading };
+  function handlePage(action) {
+    setPage(action === 'back' ? (page - 1) : (page + 1));
+  }
+
+  return { repository, issues, loading, page, handlePage };
 }
