@@ -1,0 +1,37 @@
+{
+    "Main": {
+        "Title": "我的存储库",
+        "Search": {
+            "Placeholder": "添加存储库",
+            "NoData": "您必须提供存储库",
+            "Duplicated": "存储库已位于您的收藏夹中"
+        }
+    },
+    "Buttons": {
+        "Previous": "以前的",
+        "Next": "下一个"
+    },
+    "Filters": {
+        "Labels": {
+            "All": "全部",
+            "Open": "打开",
+            "Closed": "关闭"
+        }
+    },
+    "Core": {
+        "Loading": "加载中"
+    },
+    "Languages": {
+        "en": "英语",
+        "pt": "葡萄牙语",
+        "es": "西班牙语",
+        "it": "意大利语",
+        "fr": "法语",
+        "de": "德语",
+        "ja": "日本人",
+        "zh-CN": "中国人",
+        "ru": "俄语",
+        "nl": "荷兰语",
+        "pl": "抛光"
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "Main": {
+        "Title": "Mijn opslagplaatsen",
+        "Search": {
+            "Placeholder": "Repository toevoegen",
+            "NoData": "U moet een repository opgeven",
+            "Duplicated": "Repository al in uw favoriet"
+        }
+    },
+    "Buttons": {
+        "Previous": "Vorig",
+        "Next": "Volgende"
+    },
+    "Filters": {
+        "Labels": {
+            "All": "Alle",
+            "Open": "Open",
+            "Closed": "Gesloten"
+        }
+    },
+    "Core": {
+        "Loading": "Laden"
+    },
+    "Languages": {
+        "en": "Engels",
+        "pt": "Portugees",
+        "es": "Spaans",
+        "it": "Italiaans",
+        "fr": "Frans",
+        "de": "Duits",
+        "ja": "Japanse",
+        "zh-CN": "Chinese",
+        "ru": "Russisch",
+        "nl": "Nederlands",
+        "pl": "Pools"
+    }
+}
