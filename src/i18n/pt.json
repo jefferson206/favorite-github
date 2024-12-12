@@ -2,7 +2,36 @@
     "Main": {
         "Title": "Meus Repositórios",
         "Search": {
-            "Placeholder": "Adicionar Repositório"
+            "Placeholder": "Adicionar Repositório",
+            "NoData": "Você deve fornecer um repositório",
+            "Duplicated": "Repositório já está no seu favorito"
         }
+    },
+    "Buttons": {
+        "Previous": "Anterior",
+        "Next": "Próximo"
+    },
+    "Filters": {
+        "Labels": {
+            "All": "Todos",
+            "Open": "Abrir",
+            "Closed": "Fechado"
+        }
+    },
+    "Core": {
+        "Loading": "Carregando"
+    },
+    "Languages": {
+        "en": "Inglês",
+        "pt": "Português",
+        "es": "Espanhol",
+        "it": "italiano",
+        "fr": "Francês",
+        "de": "Alemão",
+        "ja": "japonês",
+        "zh-CN": "chinês",
+        "ru": "russo",
+        "nl": "Holandês",
+        "pl": "polonês"
     }
 }

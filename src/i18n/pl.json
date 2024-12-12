@@ -1,0 +1,37 @@
+{
+    "Main": {
+        "Title": "Moje repozytoria",
+        "Search": {
+            "Placeholder": "Dodaj repozytorium",
+            "NoData": "Musisz podać repozytorium",
+            "Duplicated": "Repozytorium już w Twoim ulubionym"
+        }
+    },
+    "Buttons": {
+        "Previous": "Poprzedni",
+        "Next": "Następny"
+    },
+    "Filters": {
+        "Labels": {
+            "All": "Wszystko",
+            "Open": "Otwarte",
+            "Closed": "Zamknięte"
+        }
+    },
+    "Core": {
+        "Loading": "Załadunek"
+    },
+    "Languages": {
+        "en": "angielski",
+        "pt": "portugalski",
+        "es": "hiszpański",
+        "it": "włoski",
+        "fr": "francuski",
+        "de": "niemiecki",
+        "ja": "japoński",
+        "zh-CN": "chiński",
+        "ru": "rosyjski",
+        "nl": "Holenderski",
+        "pl": "Polski"
+    }
+}

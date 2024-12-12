@@ -21,7 +21,6 @@ export default function Main() {
 
   return (
     <Container>
-
       <h1>
         <FaGithub size={25} />
         {t('Main.Title')}

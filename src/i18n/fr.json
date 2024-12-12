@@ -1,0 +1,37 @@
+{
+    "Main": {
+        "Title": "Mes dépôts",
+        "Search": {
+            "Placeholder": "Ajouter un référentiel",
+            "NoData": "Vous devez fournir un référentiel",
+            "Duplicated": "Dépôt déjà dans vos favoris"
+        }
+    },
+    "Buttons": {
+        "Previous": "Précédent",
+        "Next": "Suivant"
+    },
+    "Filters": {
+        "Labels": {
+            "All": "Tous",
+            "Open": "Ouvrir",
+            "Closed": "Fermé"
+        }
+    },
+    "Core": {
+        "Loading": "Chargement"
+    },
+    "Languages": {
+        "en": "Anglais",
+        "pt": "portugais",
+        "es": "Espagnol",
+        "it": "italien",
+        "fr": "Français",
+        "de": "Allemand",
+        "ja": "japonais",
+        "zh-CN": "Chinois",
+        "ru": "russe",
+        "nl": "Néerlandais",
+        "pl": "polonais"
+    }
+}

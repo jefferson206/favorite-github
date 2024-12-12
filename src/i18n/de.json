@@ -1,0 +1,37 @@
+{
+    "Main": {
+        "Title": "Meine Repositories",
+        "Search": {
+            "Placeholder": "Repository hinzufügen",
+            "NoData": "Sie müssen ein Repository bereitstellen",
+            "Duplicated": "Repository bereits in Ihrem Favoriten"
+        }
+    },
+    "Buttons": {
+        "Previous": "Vorherige",
+        "Next": "Nächste"
+    },
+    "Filters": {
+        "Labels": {
+            "All": "Alle",
+            "Open": "Offen",
+            "Closed": "Geschlossen"
+        }
+    },
+    "Core": {
+        "Loading": "Laden"
+    },
+    "Languages": {
+        "en": "Englisch",
+        "pt": "Portugiesisch",
+        "es": "Spanisch",
+        "it": "Italienisch",
+        "fr": "Französisch",
+        "de": "Deutsch",
+        "ja": "japanisch",
+        "zh-CN": "chinesisch",
+        "ru": "Russisch",
+        "nl": "Niederländisch",
+        "pl": "Polieren"
+    }
+}
