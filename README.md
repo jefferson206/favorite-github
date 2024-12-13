@@ -17,7 +17,7 @@ This project lets you keep track of a list of your favorite GitHub repositories.
 
 ## Screenshots
 
-![App working](public/favorite-github1.gif)
+![App working](favorite-github1.gif)
 
 ---
 
