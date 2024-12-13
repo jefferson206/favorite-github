@@ -2,7 +2,7 @@
 
 **A simple React application to track your favorite GitHub repositories and check the issues.**
 
-This project lets you keep track of a list of your favorite GitHub repositories. You can add repositories to your preferred GitHub list by typing (<github>/<repository>) in the search area. Once added, you can browse all filtered, closed, or open issues. IIt's a great way tto you to stay updated with repositories you're interested in quickly!
+This project lets you keep track of a list of your favorite GitHub repositories. You can add repositories to your preferred GitHub list by typing (&lt;github&gt;/&lt;repository&gt;) in the search area. Once added, you can browse all filtered, closed, or open issues. IIt's a great way tto you to stay updated with repositories you're interested in quickly!
 
 ---
 
@@ -17,7 +17,7 @@ This project lets you keep track of a list of your favorite GitHub repositories.
 
 ## Screenshots
 
-![App working](./public/favorite-github1.gif)
+![App working](public/favorite-github.gif)
 
 ---
 
